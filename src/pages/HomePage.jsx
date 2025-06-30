@@ -28,7 +28,7 @@ const HomePage = () => {
 
     const coordinatesFinder = async () => {
         if (!location.trim()) {
-           console.log("⚠️ Please enter a location");
+           console.log("Please enter a location");
            return;
         }
         try{
