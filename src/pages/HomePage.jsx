@@ -1,8 +1,9 @@
-import React , {useState , useEffect} from 'react';
+import {useState , useEffect} from 'react';
 import axios from 'axios';
 import MapView from '../Components/MapView';
 import WeatherDetails from '../Components/WeatherDetails';
 import WeatherReport from '../Components/WeatherReport';
+import './HomePage.css';
 const HomePage = () => {
     const [coordinates , setCoordinates ] = useState (null);
     const [location , setLocation] = useState("");
@@ -63,24 +64,35 @@ const HomePage = () => {
     if(!coordinates) return ;
 
     return (
-        <div>
-            <h1>KK Weather </h1>
-            <div>
-                <input id = "location" placeholder = "Enter the location" value = {location} onChange = {(e) => { setLocation(e.target.value)}} />
-                <button onClick = {coordinatesFinder}>Search</button>
-
+    <div className="page-container">
+        <div className="top-bar">
+            <h1 className="app-title">KK Weather</h1>
+            <div className="search-bar">
+                <input 
+                    id="location" 
+                    placeholder="Enter the location" 
+                    value={location} 
+                    onChange={(e) => { setLocation(e.target.value) }} 
+                />
+                <button onClick={coordinatesFinder}>Search</button>
             </div>
-            <div style={{ width: "600px", height: "400px",border: "2px solid black",margin: "auto", marginTop: "50px"}}>
-                <MapView pos = {coordinates} setpos = {(coordinates) => { setCoordinates(coordinates) } }/>
-            </div>
-            <div><WeatherDetails coordinates = {coordinates}/></div>
-            <button onClick = {() => {setShowWeatherReport(true)}}> Weather Report for upcoming days</button>
-            <WeatherReport isOpen = {showWeatherReport} location ={coordinates} />
-            
-
         </div>
 
-    )
+        <div className="main-section">
+            <div className="map-box">
+                <MapView pos={coordinates} setpos={(coordinates) => { setCoordinates(coordinates) }} />
+            </div>
+            <div className="weather-panel">
+                <div className="weather-box" style={{ border: "2px solid #ccc", padding: "15px", borderRadius: "8px", minWidth: "250px"}}>
+                    <WeatherDetails coordinates={coordinates} />
+                </div>
+                <button onClick={() => { setShowWeatherReport(true) }}>Weather Report for upcoming days</button>
+            </div>
+        </div>
+
+        <WeatherReport isOpen={showWeatherReport} location={coordinates} />
+    </div>
+);
 
 
 }

@@ -1,0 +1,86 @@
+/* HomePage.css */
+
+.page-container {
+  padding: 20px 40px;
+  font-family: Arial, sans-serif;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.app-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: #14a4c8;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-bar button {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.map-box {
+  width: 600px;
+  height: 400px;
+  border: 2px solid black;
+}
+
+.weather-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.weather-panel button {
+  padding: 10px 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.weather-panel button:hover {
+  background-color: #218838;
+}
+.weather-box{
+    color:#bac0c6;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    min-width: 250px;
+}
